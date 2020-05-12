@@ -1,3 +1,5 @@
+# API format
+
 Response - {result, error}
 
 Description method |Method name | Params                             |Result                                 |
@@ -13,44 +15,38 @@ ShapeID - sqare, triangle...
 
 BlockID - physical...
 
+# Get format
 
 GetResponse
 
+Name        |Type     |Description                          |
+------------|---------|-------------------------------------|
+events      |IEvent[] |all new events (now is empty)        |
+state       |GameState|Current game state                   |
+
+IEvent
+
 Name        |Type    |Description                          |
 ------------|--------|-------------------------------------|
-events      |TypedEvent[]|all new events (now is empty)    |
-state       |GameState|Current game state                  |
+eventId     |string  |id of event                          |
 
-TypedEvent
-
-Name        |Type    |Description                          |
-------------|--------|-------------------------------------|
-type        |string  |all new events                       |
-value       |IEvent  |value of event                       |
-
-*TODO: typed game state with gameModId*
+*TODO: IGameState, gameModId and other*
 
 GameState
 
-Name        |Type    |Description                          |
-------------|--------|-------------------------------------|
-conditionId |int     |Preaparation, game, end              |
-currentPlayerID|string|id of player, which turn now        | 
-blocks      |TypedBlock[]|Array of blocks                  |
-projectiles |TypedProjectile[]|Existed projectiles         |
-rules       |TypedRules[]|game rules                         |
-
-TypedBlock
-
-Name        |Type    |Description                          |
-------------|--------|-------------------------------------|
-blockType   |string  |type of block                        |
-value       |IBlock  |value of block                       |
+Name           |Type         |Description                          |
+---------------|-------------|-------------------------------------|
+conditionId    |int          |Preaparation, game, end              |
+currentPlayerID|string       |id of player, which turn now         | 
+blocks         |IBlock[]     |Array of blocks                      |
+projectiles    |IProjectile[]|Existed projectiles                  |
+rules          |IRules[]     |game rules                           |
 
 IBlock
 
 Name        |Type    |Description                          |
 ------------|--------|-------------------------------------|
+blockId     |string  |block id                             |
 ownerID     |string  |if of block's owner                  |
 shapeID     |string  |id of shape                          |
 shapePos    |Point   |smth like left down corner           |
@@ -63,30 +59,22 @@ health      |int     |hp of block                          |
 maxHp       |int     |max hp of this block                 |
 
 
-TypedProjectile
-
-Name        |Type    |Description                          |
-------------|--------|-------------------------------------|
-projectileID|string  |id of projectile                     |
-value       |IProjectile|value of projectile               |
-
 IProjectile
 
 Name        |Type    |Description                          |
 ------------|--------|-------------------------------------|
+projectileID|string  |id of projectile                     |
 shape       |Circle  |pos and size of projectile           |
 motionVector|Point   |motion vector                        |
 ownerId     |string  |id of player who ownthis projectile  |
 health      |int     |hp of projectile                     |
 maxHp       |int     |max hp of projectile                 |
 
-
-TypedRules
+IRule
 
 Name        |Type    |Description                          |
 ------------|--------|-------------------------------------|
 ruleId      |string  |id of rule                           |
-value       |IRule   |id of rule                           |
 
 Gravity : IRule
 
