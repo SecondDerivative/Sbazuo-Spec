@@ -7,7 +7,7 @@ Description method |Method name | Params                             |Result    
 join to session    |Join        |{}                                  |{Token, playerID}                      |
 get data           |Get         |{TKN}                               |GetResponse                            |
 Create block  by left down corner |CreateBlock |{TKN, Position:PNT, BlockId, ShapeID} |\empty                |
-Shhot              |Shoot       |{TKN, ProjectileID, MotionDirection:PNT} |\empty                            |
+Shoot              |Shoot       |{TKN, ProjectileID, MotionDirection:PNT} |\empty                            |
 
 
 
@@ -56,7 +56,7 @@ PhysicalBlock : IBlock
 Name        |Type    |Description                          |
 ------------|--------|-------------------------------------|
 health      |int     |hp of block                          |
-maxHp       |int     |max hp of this block                 |
+maxHealth   |int     |max hp of this block                 |
 
 
 IProjectile
@@ -68,7 +68,7 @@ shape       |Circle  |pos and size of projectile           |
 motionVector|Point   |motion vector                        |
 ownerId     |string  |id of player who ownthis projectile  |
 health      |int     |hp of projectile                     |
-maxHp       |int     |max hp of projectile                 |
+maxHealth   |int     |max hp of projectile                 |
 
 IRule
 
