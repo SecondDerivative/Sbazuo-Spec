@@ -41,6 +41,8 @@ currentPlayerId|string       |id of player, which turn now         |
 blocks         |IBlock[]     |Array of blocks                      |
 projectiles    |IProjectile[]|Existed projectiles                  |
 rules          |IRules[]     |game rules                           |
+players        |Map<String, Player>|map from playedId to player's info|
+
 
 IBlock
 
@@ -49,7 +51,7 @@ Name        |Type    |Description                          |
 blockId     |string  |block id                             |
 ownerId     |string  |if of block's owner                  |
 shapeId     |string  |id of shape                          |
-shapePos    |Point   |smth like left down corner           |
+shapePosition|Point  |smth like left down corner           |
 
 PhysicalBlock : IBlock
 
@@ -81,3 +83,12 @@ Gravity : IRule
 Name        |Type    |Description                          |
 ------------|--------|-------------------------------------|
 direction   |Point   |direction of gravity                 |
+
+Player
+
+Name        |Type    |Description                          |
+------------|--------|-------------------------------------|
+catapultPosition|Point|position of player's catapult       |
+id          |string  |playerId                             |
+ownAreasIds |string[]|array of area's Id                   |
+~~nickname~~|string  |nick of player                       |   
