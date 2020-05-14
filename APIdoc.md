@@ -4,10 +4,10 @@ Response - {result, error}
 
 Description method |Method name | Params                             |Result                                 |
 -------------------|------------|------------------------------------|---------------------------------------|
-join to session    |Join        |{}                                  |{Token, playerId}                      |
-get data           |Get         |{TKN}                               |GetResponse                            |
-Create block  by left down corner |CreateBlock |{TKN, Position:PNT, BlockId, ShapeId} |\empty                |
-Shoot              |Shoot       |{TKN, ProjectileId, MotionDirection:PNT} |\empty                            |
+join to session    |Session/Join|{}                                  |{Token, playerId}                      |
+get data           |Game/Get    |{TKN}                               |GetResponse                            |
+Create block  by left down corner |Game/CreateBlock |{TKN, Position:PNT, BlockId, ShapeId} |\empty                |
+Shoot              |Game/Shoot    |{TKN, ProjectileId, MotionDirection:PNT} |\empty                            |
 
 
 
