@@ -36,7 +36,7 @@ GameState
 
 Name           |Type         |Description                          |
 ---------------|-------------|-------------------------------------|
-conditionId    |int          |Preaparation, game, end              |
+conditionId    |string       |Preaparation, game, end              |
 currentPlayerId|string       |id of player, which turn now         | 
 blocks         |IBlock[]     |Array of blocks                      |
 projectiles    |IProjectile[]|Existed projectiles                  |
@@ -49,7 +49,7 @@ IBlock
 Name        |Type    |Description                          |
 ------------|--------|-------------------------------------|
 blockId     |string  |block id                             |
-ownerId     |string  |if of block's owner                  |
+ownerId     |string  |id of block's owner                  |
 shapeId     |string  |id of shape                          |
 shapePosition|Point  |smth like left down corner           |
 
