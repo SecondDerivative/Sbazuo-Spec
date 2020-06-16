@@ -66,7 +66,8 @@ IProjectile
 Name        |Type    |Description                          |
 ------------|--------|-------------------------------------|
 projectileId|string  |id of projectile                     |
-shape       |Circle  |pos and size of projectile           |
+position    |Point   |pos of projectile                    |
+radius      |double  |radius of projectile                 |
 motionVector|Point   |motion vector                        |
 ownerId     |string  |id of player who ownthis projectile  |
 health      |int     |hp of projectile                     |
