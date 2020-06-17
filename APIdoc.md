@@ -4,11 +4,17 @@ Response - {result, error}
 
 Description method |Method name | Params                             |Result                                 |
 -------------------|------------|------------------------------------|---------------------------------------|
-join to session    |Session/Join|{}                                  |{Token, playerId}                      |
 get data           |Game/Get    |{TKN}                               |GetResponse                            |
-Create block  by left down corner |Game/CreateBlock |{TKN, Position:PNT, BlockId, ShapeId} |\empty                |
-Shoot              |Game/Shoot    |{TKN, ProjectileId, MotionDirection:PNT} |\empty                            |
-
+Create block  by left down corner |Game/CreateBlock |{TKN, Position:PNT, BlockId, ShapeId} |\empty           |
+Shoot              |Game/Shoot    |{TKN, ProjectileId, MotionDirection:PNT} |\empty                          |
+creating new lobby |Session/CreateLobby|{TKN, LobbyName:string}      |LobbyInfo                              |
+joining to lobby   |Session/JoinLobby|{TKN, LobbyId:string}          |LobbyInfo                              |
+leaving from lobby |Session/LeaveLobby|{TKN}                         |\empty                                 |
+starting lobby game|Session/Start |{TKN}                             |\empty                                 |
+returns existing lobbies|Session/GetLobbies|{TKN}                    |LobbyInfo[]                            |
+returns existing players|Session/GetPlayers|{TKN}                    |AccountInfo[]                          |
+login to account   |Accounts/Login|{authInfo:AuthRequest}            |TKN                                    |
+register and login to account|Accounts/Auth|{authInfo:AuthRequest}   |TKN                                    |
 
 
 ShapeId - sqare, triangle...
@@ -92,4 +98,32 @@ Name        |Type    |Description                          |
 catapultPosition|Point|position of player's catapult       |
 id          |string  |playerId                             |
 ownAreasIds |string[]|array of area's Id                   |
-~~nickname~~|string  |nick of player                       |   
+~~nickname~~|string  |nick of player                       |
+
+# Service format
+
+AuthRequest
+
+Name        |Type    |Description                          |
+------------|--------|-------------------------------------|
+Nickname    |string  |account's nickname                   |
+Password    |string  |password                             |
+
+AccountInfo
+
+Name        |Type    |Description                          |
+------------|--------|-------------------------------------|
+Nickname    |string  |account's nickname                   |
+Id          |string  |account's Id                         |
+
+LobbyInfo
+
+Name        |Type    |Description                          |
+------------|--------|-------------------------------------|
+Id          |string  |lobby's Id                           |
+LobbyName   |string  |lobby's name                         |
+CreatorId   |string  |Id of player, which created this lobby|
+PlayerIds   |string[]|array of players, which joined to lobby|
+MapId       |string? |selected map id                      |
+ModId       |string? |selected mod id                      |
+
