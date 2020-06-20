@@ -15,6 +15,7 @@ returns existing lobbies|Session/GetLobbies|{TKN}                    |LobbyInfo[
 returns existing players|Session/GetPlayers|{TKN}                    |AccountInfo[]                          |
 login to account   |Accounts/Login|{authInfo:AuthRequest}            |TKN                                    |
 register and login to account|Accounts/Auth|{authInfo:AuthRequest}   |TKN                                    |
+create or join to existed game|Session/JoinTemp                      |TKN                                    |
 
 
 ShapeId - sqare, triangle...
